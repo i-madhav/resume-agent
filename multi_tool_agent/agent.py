@@ -124,3 +124,10 @@ root_agent = Agent(
     ),
     tools=[parse_given_path,provide_information_about_pdf],
 )
+
+session_service = InMemorySessionService()
+runner = Runner(
+    agent=root_agent,
+    app_name="pdf_qa_agent", 
+    session_service=session_service
+)
